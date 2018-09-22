@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置userdao对象实例化,并存储到spring容器中-->
+    <bean id="userdao" class="com.ipc.dao.Impl.userdaoImpl">
+    </bean>
+
+    <bean id="users" class="com.ipc.domain.Users">
+     <!--  <constructor-arg name="name" value="哆啦A梦"></constructor-arg>
+       <constructor-arg name="age"  value="25" ></constructor-arg>
+       <constructor-arg name="time"  ref="timetext" ></constructor-arg>-->
+        <property name="text" value="大家撒就多久啊"></property>
+    </bean>
+
+     <bean id="timetext" class="java.util.Date"></bean>
+
+<bean id="UserIm" class="com.ipc.service.impl.UserServiceImpl">
+    <property name="us" ref="userdao"></property>
+
+
+</bean>
+  <bean id="mypojo" class="com.ipc.domain.Mypojo">
+      <property name="str">
+          <array>
+              <value>就撒娇</value>
+              <value>打啥架</value>
+              <value>摸摸哒</value>
+              <value>大家安静</value>
+          </array>
+      </property>
+      <property name="ls">
+          <list>
+              <value>大大力</value>
+              <value>味道好</value>
+              <value>营养高</value>
+              <value>打出超凡的力度</value>
+          </list>
+      </property>
+
+      <property name="map">
+         <map>
+             <entry key="s1" value="的撒"></entry>
+             <entry key="s2" value="的凯撒看"></entry>
+             <entry key="s3" value="东三环 "></entry>
+             <entry key="s4" value="大家撒就"></entry>
+         </map>
+      </property>
+
+      <property name="set">
+          <set>
+              <value>粉可爱</value>
+              <value>大厦巨大</value>
+              <value>大家好</value>
+              <value>咋咋辉</value>
+          </set>
+      </property>
+
+      <property name="prots">
+          <props>
+              <prop key="c1">积分啊</prop>
+              <prop key="c2">飞机撒</prop>
+              <prop key="c3">阿达大</prop>
+              <prop key="c4">的凯撒看</prop>
+          </props>
+
+      </property>
+
+
+
+
+  </bean>
+
+
+
+
+
+
+
+
+
+
+</beans>
